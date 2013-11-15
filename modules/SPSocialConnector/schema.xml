@@ -1,0 +1,40 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_sp_socialconnector</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_sp_socialconnector` (
+  `socialserviceconnectorid` int(11) DEFAULT '0',
+  `message` text,
+  `status` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_sp_socialconnectorcf</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_sp_socialconnectorcf` (
+  `socialserviceconnectorid` int(11) NOT NULL,
+  PRIMARY KEY (`socialserviceconnectorid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_sp_socialconnector_providers</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_sp_socialconnector_providers` (
+  `id` int(11) NOT NULL,
+  `provider_name` varchar(45) NOT NULL,
+  `provider_domen` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_sp_socialconnector_status</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_sp_socialconnector_status` (
+  `socialserviceconnectorid` int(11) DEFAULT NULL,
+  `to_url` varchar(45) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  `statusid` int(11) NOT NULL AUTO_INCREMENT,
+  `statusmessage` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`statusid`)
+) ENGINE=InnoDB AUTO_INCREMENT=179 DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>

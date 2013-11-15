@@ -1,0 +1,23 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>sp_units</name>
+			<sql><![CDATA[CREATE TABLE `sp_units` (
+              `unitid` int(19) NOT NULL default '0',
+              `unit_no` varchar(100) collate utf8_general_ci NOT NULL,
+              `unitname` varchar(200) collate utf8_general_ci NOT NULL,  
+              `usageunit` varchar(200) collate utf8_general_ci default NULL, 
+              `unit_code` varchar(200) collate utf8_general_ci default NULL,
+              PRIMARY KEY  (`unitid`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci]]></sql>
+		</table>
+		<table>
+			<name>sp_unitscf</name>
+			<sql><![CDATA[CREATE TABLE `sp_unitscf` (
+              `unitid` int(19) NOT NULL default '0',
+              PRIMARY KEY  (`unitid`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci]]></sql>
+		</table>
+	</tables>
+</schema>
